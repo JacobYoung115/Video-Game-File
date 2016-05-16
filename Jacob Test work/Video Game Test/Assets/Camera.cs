@@ -1,0 +1,23 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class Camera : MonoBehaviour {
+
+	public GameObject player;
+	private Vector3 offset;
+
+	// Use this for initialization
+	void Start () {
+		offset = transform.position - player.transform.position;
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}
+
+	void LateUpdate (){
+		// Move camera so it stays follows player
+		transform.position = player.transform.position + offset;
+	}
+}
